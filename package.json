@@ -1,0 +1,28 @@
+{
+  "name": "drive-media",
+  "version": "1.0.0",
+  "description": "Turn Google Drive share links into usable image and video URLs\"",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darryl-Mbae/drive-media.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Darryl-Mbae/drive-media/issues"
+  },
+  "homepage": "https://github.com/Darryl-Mbae/drive-media#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.5.2",
+    "ts-jest": "^29.4.14",
+    "typescript": "^5.9.3"
+  }
+}
