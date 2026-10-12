@@ -1,6 +1,6 @@
 {
   "name": "drive-media",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert Google Drive share links into direct URLs for images and embed URLs for videos",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
