@@ -4,3 +4,7 @@ dist/
 *.log
 .DS_Store
 coverage/
+PUBLISH.md
+AUDIT_REPORT.md
+FINAL_SUMMARY.md
+READY_FOR_PUBLICATION.md
