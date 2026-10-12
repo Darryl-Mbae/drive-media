@@ -1,26 +1,41 @@
 {
   "name": "drive-media",
-  "version": "1.0.0",
-  "description": "Turn Google Drive share links into usable image and video URLs\"",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Convert Google Drive share links into direct URLs for images and embed URLs for videos",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": ["lib", "LICENSE", "README.md"],
   "scripts": {
-    "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "build:lib": "tsc -p tsconfig.build.json",
+    "build": "npm run build:lib",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run test && npm run build:lib && npm run typecheck"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Darryl-Mbae/drive-media.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["google-drive", "url", "image", "video", "embed", "conversion", "utility"],
+  "author": {
+    "name": "Darryl Mbae",
+    "url": "https://github.com/Darryl-Mbae"
+  },
+  "license": "MIT",
   "type": "commonjs",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "bugs": {
     "url": "https://github.com/Darryl-Mbae/drive-media/issues"
   },
   "homepage": "https://github.com/Darryl-Mbae/drive-media#readme",
   "devDependencies": {
     "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.56.0",
     "jest": "^30.5.2",
     "ts-jest": "^29.4.14",
     "typescript": "^5.9.3"
