@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drive Media Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+    
+    p.subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    input {
+      flex: 1;
+      min-width: 250px;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    select {
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+    
+    select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    button {
+      padding: 12px 24px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      white-space: nowrap;
+    }
+    
+    button:hover {
+      background: #764ba2;
+    }
+    
+    button:active {
+      transform: scale(0.98);
+    }
+    
+    #error {
+      color: #d32f2f;
+      background: #ffebee;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: none;
+      border-left: 4px solid #d32f2f;
+    }
+    
+    #error.show {
+      display: block;
+    }
+    
+    #out {
+      margin-top: 30px;
+    }
+    
+    #out img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    #out iframe {
+      width: 100%;
+      max-width: 100%;
+      height: 360px;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .info {
+      background: #e3f2fd;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #1565c0;
+      margin-top: 20px;
+      border-left: 4px solid #1976d2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔗 Drive Media Converter</h1>
+    <p class="subtitle">Convert Google Drive links into direct URLs</p>
+    
+    <div class="input-group">
+      <input id="link" type="text" placeholder="Paste a Google Drive link..." />
+      <select id="type">
+        <option value="image">Image</option>
+        <option value="video">Video</option>
+      </select>
+      <button id="go">Convert</button>
+    </div>
+    
+    <p id="error"></p>
+    <div id="out"></div>
+    
+    <div class="info">
+      <strong>Note:</strong> Files must be shared as "Anyone with the link" for URLs to work. This demo uses the drive-media library.
+    </div>
+  </div>
+  
+  <script src="../dist/main.js"></script>
+</body>
+</html>
