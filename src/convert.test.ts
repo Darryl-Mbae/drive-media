@@ -1,4 +1,4 @@
-import { toImageUrl } from "./convert";
+import { toImageUrl, toVideoEmbedUrl } from "./convert";
 
 describe("toImageUrl", () => {
   test("builds a thumbnail URL from a /file/d/ link", () => {
@@ -21,5 +21,29 @@ describe("toImageUrl", () => {
 
   test("throws on an empty string", () => {
     expect(() => toImageUrl("")).toThrow("Please provide a Google Drive link");
+  });
+});
+
+describe("toVideoEmbedUrl", () => {
+  test("builds a preview URL from a /file/d/ link", () => {
+    expect(
+      toVideoEmbedUrl("https://drive.google.com/file/d/abc123/view")
+    ).toBe("https://drive.google.com/file/d/abc123/preview");
+  });
+
+  test("works with open?id= links", () => {
+    expect(
+      toVideoEmbedUrl("https://drive.google.com/open?id=abc123")
+    ).toBe("https://drive.google.com/file/d/abc123/preview");
+  });
+
+  test("throws on folder links", () => {
+    expect(() =>
+      toVideoEmbedUrl("https://drive.google.com/drive/folders/abc123")
+    ).toThrow("Folder links are not supported");
+  });
+
+  test("throws on an empty string", () => {
+    expect(() => toVideoEmbedUrl("")).toThrow("Please provide a Google Drive link");
   });
 });
